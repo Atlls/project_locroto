@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn3h62o4vgiqj"]
+
+[ext_resource type="Script" path="res://cb.gd" id="1_f2en2"]
+[ext_resource type="Texture2D" uid="uid://bfjxwdqu3d20a" path="res://assets/char.png" id="2_hv2wn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4v0g0"]
+radius = 6.0
+
+[sub_resource type="Animation" id="Animation_ujiq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.164061]
+}
+
+[sub_resource type="Animation" id="Animation_oagth"]
+resource_name = "siu"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.153893, 0.153893),
+"update": 0,
+"values": [-0.164061, 0.164061]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kl7ql"]
+_data = {
+"RESET": SubResource("Animation_ujiq2"),
+"siu": SubResource("Animation_oagth")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_f2en2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+rotation = -0.164061
+texture = ExtResource("2_hv2wn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4v0g0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kl7ql")
+}
