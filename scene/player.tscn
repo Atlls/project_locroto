@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cn3h62o4vgiqj"]
 
-[ext_resource type="Script" path="res://cb.gd" id="1_f2en2"]
-[ext_resource type="Texture2D" uid="uid://bfjxwdqu3d20a" path="res://assets/char.png" id="2_hv2wn"]
+[ext_resource type="Script" path="res://scripts/person_controler.gd" id="1_or8e5"]
+[ext_resource type="Texture2D" uid="uid://bfjxwdqu3d20a" path="res://assets/char.png" id="2_6inmk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4v0g0"]
 radius = 6.0
@@ -44,12 +44,12 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_f2en2")
+script = ExtResource("1_or8e5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
 rotation = -0.164061
-texture = ExtResource("2_hv2wn")
+texture = ExtResource("2_6inmk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4v0g0")

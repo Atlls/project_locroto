@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bs8fwvwk8vhin"]
 
 [ext_resource type="Texture2D" uid="uid://i3fga4c5xv74" path="res://assets/wall.png" id="1_h2umu"]
-[ext_resource type="PackedScene" uid="uid://cvv1tmue6gbmv" path="res://scene/static_body_2d.tscn" id="2_ena8y"]
-[ext_resource type="PackedScene" uid="uid://cn3h62o4vgiqj" path="res://scene/character_body_2d.tscn" id="3_duvnl"]
+[ext_resource type="PackedScene" uid="uid://cvv1tmue6gbmv" path="res://scene/arbol.tscn" id="2_ena8y"]
+[ext_resource type="PackedScene" uid="uid://cn3h62o4vgiqj" path="res://scene/player.tscn" id="3_duvnl"]
 
 [node name="Mundo" type="Node2D"]
 y_sort_enabled = true
