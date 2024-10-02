@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs8fwvwk8vhin"]
+[gd_scene load_steps=3 format=3 uid="uid://bs8fwvwk8vhin"]
 
+[ext_resource type="PackedScene" uid="uid://bt0wyr6406iag" path="res://scene/tilemap.tscn" id="2_6lk3q"]
 [ext_resource type="PackedScene" uid="uid://cn3h62o4vgiqj" path="res://scene/player.tscn" id="3_duvnl"]
 
 [node name="Mundo" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(183, 123)
+position = Vector2(-11, 18)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_duvnl")]
+position = Vector2(169, 104)
+
+[node name="Tilemap" parent="." instance=ExtResource("2_6lk3q")]
