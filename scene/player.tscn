@@ -1,24 +1,21 @@
 [gd_scene load_steps=14 format=3 uid="uid://cn3h62o4vgiqj"]
 
 [ext_resource type="Script" path="res://scripts/person_controler.gd" id="1_or8e5"]
-[ext_resource type="Texture2D" uid="uid://bfjxwdqu3d20a" path="res://assets/char.png" id="2_6inmk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6liug"]
-size = Vector2(7.5, 10)
+[ext_resource type="Texture2D" uid="uid://bu21mr8ko4cfk" path="res://assets/sprite_sheet/vartolo1_ss.png" id="2_gtyml"]
 
 [sub_resource type="Animation" id="Animation_ujiq2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.0936535]
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_hfswo"]
@@ -27,31 +24,19 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.81),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.0522201, 0.00870369]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_w0yv4"]
 resource_name = "run"
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.164939, 0.164939),
-"update": 0,
-"values": [-0.0936535, 0.0942478]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kl7ql"]
 _data = {
@@ -85,18 +70,13 @@ states/idle/position = Vector2(321, 262)
 states/run/node = SubResource("AnimationNodeAnimation_4xsr2")
 states/run/position = Vector2(501, 262)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_58j6e"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_pdqvg"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_a86ic")]
+graph_offset = Vector2(-245.554, 118.18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58i6p"]
+size = Vector2(8.5, 5.75)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_or8e5")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -4)
-rotation = -0.0936535
-texture = ExtResource("2_6inmk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_6liug")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -107,4 +87,12 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_gfhn6")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = true
-parameters/conditions/run = true
+parameters/conditions/run = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gtyml")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_58i6p")
