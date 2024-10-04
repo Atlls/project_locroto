@@ -21,7 +21,7 @@ func e_idle(active:bool):
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
 	
-	velocity = direction * 100
+	velocity = direction * 50
 
 	if direction:
 		e_run(true)
