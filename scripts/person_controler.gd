@@ -1,31 +1,31 @@
 extends CharacterBody2D
 
-# Velocidad del dash
-var dash_speed = 400
-
-@onready var maquina_estados: AnimationTree = $AnimationTree
+#export(int) var speed = 80.0
 
 # Llamado cuando el nodo entra en el árbol de la escena por primera vez.
 func _ready() -> void:
 	$AnimationPlayer.play('idle')
 
-func e_run(active:bool):
-	maquina_estados['parameters/conditions/run'] = active
-	maquina_estados['parameters/conditions/idle'] = not active
-	
-func e_idle(active:bool):
-	maquina_estados['parameters/conditions/run'] = not active
-	maquina_estados['parameters/conditions/idle'] = active
+func e_run(value: Vector2) -> void:
+	$AnimationTree.get("parameters/playback").travel("run")
+	$AnimationTree.set("parameters/run/blend_position", value)
+	print(value)
+
+func e_idle() -> void:
+	$AnimationTree.get("parameters/playback").travel("idle")
+
 
 # Llamado cada frame. 'delta' es el tiempo transcurrido desde el frame anterior.
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector('ui_left', 'ui_right', 'ui_up', 'ui_down')
+	var input_vector = Vector2.ZERO
+	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vector = input_vector.normalized()
+	velocity = input_vector * 80.0
 	
-	velocity = direction * 50
-
-	if direction:
-		e_run(true)
+	if input_vector != Vector2.ZERO:
+		e_run(input_vector)
 	else:
-		e_idle(true)
+		e_idle()
 	
 	move_and_slide()
