@@ -5,9 +5,9 @@
 
 [node name="Mundo" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(-11, 18)
+position = Vector2(-13, 16)
 
 [node name="Tilemap" parent="." instance=ExtResource("2_6lk3q")]
 
 [node name="vartolo" parent="." instance=ExtResource("3_duvnl")]
-position = Vector2(113, 72)
+position = Vector2(120, 97)

@@ -136,50 +136,47 @@ _data = {
 "run_up": SubResource("Animation_22jeb")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pd77c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dsxj6"]
 animation = &"idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lvxht"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ahwbn"]
 animation = &"run_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uynxb"]
-animation = &"run_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2x8mx"]
-animation = &"run_left"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b1v2c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wgoy"]
 animation = &"run_right"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_i3kwu"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_lvxht")
-blend_point_0/pos = Vector2(0, -0.9)
-blend_point_1/node = SubResource("AnimationNodeAnimation_uynxb")
-blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_2x8mx")
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_apuhs"]
+animation = &"run_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hgav5"]
+animation = &"run_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_oqn4e"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ahwbn")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_6wgoy")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_apuhs")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_b1v2c")
-blend_point_3/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_hgav5")
+blend_point_3/pos = Vector2(0, -1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_58j6e"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eauec"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i4xti"]
-advance_mode = 2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cebyw"]
+reset = false
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ifuab"]
-advance_mode = 2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nsuq1"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gfhn6"]
-states/End/position = Vector2(1205, 69)
-states/Start/position = Vector2(156, 262)
-states/idle/node = SubResource("AnimationNodeAnimation_pd77c")
-states/idle/position = Vector2(321, 262)
-states/run/node = SubResource("AnimationNodeBlendSpace2D_i3kwu")
-states/run/position = Vector2(472.446, 262)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_58j6e"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_i4xti"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_ifuab")]
-graph_offset = Vector2(-245.554, 118.18)
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2vx4o"]
+states/Start/position = Vector2(374, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_dsxj6")
+states/idle/position = Vector2(542, 100)
+states/run/node = SubResource("AnimationNodeBlendSpace2D_oqn4e")
+states/run/position = Vector2(711, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_eauec"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_cebyw"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_nsuq1")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58i6p"]
 size = Vector2(8.5, 5.75)
@@ -193,9 +190,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_gfhn6")
+tree_root = SubResource("AnimationNodeStateMachine_2vx4o")
 anim_player = NodePath("../AnimationPlayer")
-parameters/run/blend_position = Vector2(0.31759, -1.0354)
+parameters/run/blend_position = Vector2(-0.223127, -0.141593)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
