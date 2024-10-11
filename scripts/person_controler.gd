@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 40.0
+@export var speed = 40.0
 
 # Llamado cuando el nodo entra en el árbol de la escena por primera vez.
 func _ready() -> void:
