@@ -1,27 +1,20 @@
 extends CharacterBody2D
 
-@export var speed = 40.0
+@export var speed: float = 100.0
+
+@onready var _animation_tree : AnimationTree = $AnimationTree
+
 
 # Llamado cuando el nodo entra en el árbol de la escena por primera vez.
 func _ready() -> void:
 	$AnimationPlayer.play('idle')
 
-func e_run(value: Vector2) -> void:
-	$AnimationTree.get("parameters/playback").travel("run")
-	$AnimationTree.set("parameters/run/blend_position", value)
-	print(value)
-	print('Run')
-
-func e_idle() -> void:
-	$AnimationTree.get("parameters/playback").travel("idle")
-	print('Idle')
-
 
 # Llamado cada frame. 'delta' es el tiempo transcurrido desde el frame anterior.
-func _physics_process(delta: float) -> void:
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+func _physics_process(_delta: float) -> void:
+	var input_vector := Vector2.ZERO
+	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	input_vector = input_vector.normalized()
 	velocity = input_vector * speed
 	
@@ -31,3 +24,12 @@ func _physics_process(delta: float) -> void:
 		e_idle()
 	
 	move_and_slide()
+
+
+func e_run(value: Vector2) -> void:
+	_animation_tree.get("parameters/playback").travel("run")
+	_animation_tree.set("parameters/run/blend_position", value)
+
+
+func e_idle() -> void:
+	_animation_tree.get("parameters/playback").travel("idle")

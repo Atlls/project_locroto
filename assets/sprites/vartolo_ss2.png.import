@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mfopvbhge6af"
-path="res://.godot/imported/vartolo_ss2.png-aa80b0e5dffab3f8ffcb8e167f00c9e9.ctex"
+path="res://.godot/imported/vartolo_ss2.png-c1a23587b263f2216b747dea881ebd99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprite_sheet/vartolo_ss2.png"
-dest_files=["res://.godot/imported/vartolo_ss2.png-aa80b0e5dffab3f8ffcb8e167f00c9e9.ctex"]
+source_file="res://assets/sprites/vartolo_ss2.png"
+dest_files=["res://.godot/imported/vartolo_ss2.png-c1a23587b263f2216b747dea881ebd99.ctex"]
 
 [params]
 
