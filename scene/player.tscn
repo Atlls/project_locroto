@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://cn3h62o4vgiqj"]
+[gd_scene load_steps=28 format=3 uid="uid://cn3h62o4vgiqj"]
 
 [ext_resource type="Script" path="res://scripts/person_controler.gd" id="1_or8e5"]
 [ext_resource type="Texture2D" uid="uid://mfopvbhge6af" path="res://assets/sprites/vartolo_ss2.png" id="2_uf7cq"]
+[ext_resource type="Script" path="res://drill.gd" id="3_7u42c"]
 
 [sub_resource type="Animation" id="Animation_bm5kp"]
 length = 0.001
@@ -175,6 +176,7 @@ animations = [{
 size = Vector2(8.5, 5.75)
 
 [node name="Vartolo" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_or8e5")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -195,3 +197,8 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_58i6p")
+
+[node name="Drill" type="RayCast2D" parent="."]
+target_position = Vector2(0, 18)
+collision_mask = 2
+script = ExtResource("3_7u42c")
