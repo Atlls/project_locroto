@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://cn3h62o4vgiqj"]
 
 [ext_resource type="Script" path="res://scripts/person_controler.gd" id="1_or8e5"]
-[ext_resource type="Texture2D" path="res://assets/sprite_sheet/vartolo_ss2.png" id="2_uf7cq"]
+[ext_resource type="Texture2D" uid="uid://mfopvbhge6af" path="res://assets/sprites/vartolo_ss2.png" id="2_uf7cq"]
 [ext_resource type="Script" path="res://drill.gd" id="3_7u42c"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gi807"]
