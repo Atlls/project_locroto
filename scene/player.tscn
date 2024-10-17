@@ -202,3 +202,7 @@ shape = SubResource("RectangleShape2D_58i6p")
 target_position = Vector2(0, 18)
 collision_mask = 2
 script = ExtResource("3_7u42c")
+
+[node name="CoolDown" type="Timer" parent="Drill"]
+
+[connection signal="timeout" from="Drill/CoolDown" to="Drill" method="_on_cool_down_timeout"]
