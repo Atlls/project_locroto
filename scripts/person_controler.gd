@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var speed: float = 100.0
 
 @onready var _animation_tree: AnimationTree = $AnimationTree
-@onready var _drill_raycast: RayCast2D = $Drill
 
 
 # Llamado cuando el nodo entra en el árbol de la escena por primera vez.
@@ -34,9 +33,3 @@ func e_run(value: Vector2) -> void:
 
 func e_idle() -> void:
 	_animation_tree.get("parameters/playback").travel("idle")
-
-
-func _on_hurtbox_body_entered(body: Node2D) -> void:
-	print("mapinson")
-	if body is DestructibleTileMapLayer:
-		var map := body as TileMapLayer
