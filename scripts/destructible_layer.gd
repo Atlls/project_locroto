@@ -5,9 +5,9 @@ extends TileMapLayer
 var _gridData: Dictionary
 
 func _ready():
-	if not Engine.is_editor_hint():
+	if Engine.is_editor_hint():
 		return
-
+	
 	var cells = get_used_cells()
 	for cell_pos in cells:
 		var cell_data: TileData = get_cell_tile_data(cell_pos)
@@ -16,7 +16,7 @@ func _ready():
 				cell_data.get_custom_data("resource"), 
 				cell_data.get_custom_data("resource_qty"))
 
-# TODO: Make this warning to show up in the editor
+
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = []
 
@@ -31,7 +31,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 			warnings.append("The Tileset is missing resource_qty custom layer")
 
 	return warnings
-	
+
 
 func damage_tile(collision_pos: Vector2, damage: int) -> void:
 	var map_pos: Vector2i = local_to_map(to_local(collision_pos))
@@ -60,9 +60,6 @@ class CustomTileData:
 
 	# Constructor
 	func _init(p_destructible: bool = false, p_hit_points: int = 0, p_resource: String = "", p_resource_qty: int = 0):
-		if not Engine.is_editor_hint():
-			return
-
 		destructible = p_destructible
 		hit_points = p_hit_points
 		resource = p_resource
