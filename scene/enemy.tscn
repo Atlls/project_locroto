@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpwx62sugkn8e"]
+
+[ext_resource type="Script" path="res://scripts/rat.gd" id="1_nc6v5"]
+[ext_resource type="Texture2D" uid="uid://d0kfo2v83bd7t" path="res://assets/sprites/enemies/rat/Rat_Idle.png" id="1_owygk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjgtp"]
+atlas = ExtResource("1_owygk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdsxc"]
+atlas = ExtResource("1_owygk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjlh6"]
+atlas = ExtResource("1_owygk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33t05"]
+atlas = ExtResource("1_owygk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1n2pn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjgtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdsxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjlh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33t05")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5l1f"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rqsjy"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8sfcj"]
+radius = 65.2763
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_nc6v5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1n2pn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6981
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e5l1f")
+
+[node name="DangerZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_rqsjy")
+
+[node name="OutDangerZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutDangerZone"]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_8sfcj")
+
+[connection signal="body_entered" from="DangerZone" to="." method="_on_danger_zone_body_entered"]
+[connection signal="body_exited" from="OutDangerZone" to="." method="_on_out_danger_zone_body_exited"]
