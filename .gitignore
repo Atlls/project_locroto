@@ -1,4 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# System spefici ignores
+*.tmp
+
+# Editor specific ignores
 .vscode/
+
+# Imported translations (automatically generated from CSV files)
+*.translation
