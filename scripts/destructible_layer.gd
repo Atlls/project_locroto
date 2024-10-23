@@ -35,7 +35,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 	# Check if the tileset has the required custom data layers
 	if tile_set != null:
-		if tile_set.get_custom_data_layer_by_name("destructible") == -1:
+		if tile_set.get_custom_data_layer_by_name("is_destructible") == -1:
 			warnings.append("The Tileset is missing the is_destructible custom layer")
 		if tile_set.get_custom_data_layer_by_name("hit_points") == -1:
 			warnings.append("The Tileset is missing the hit_points custom layer")
