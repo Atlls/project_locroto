@@ -2,16 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/person_controler.gd" id="1_or8e5"]
 [ext_resource type="Texture2D" uid="uid://mfopvbhge6af" path="res://assets/sprites/vartolo_ss2.png" id="2_uf7cq"]
-[ext_resource type="Script" path="res://drill.gd" id="3_7u42c"]
+[ext_resource type="Script" path="res://scripts/drill.gd" id="3_msu6e"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gi807"]
 animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8xq21"]
-animation = &"run_up"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_84cqv"]
-animation = &"run_down"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tr3ac"]
 animation = &"run_right"
@@ -19,15 +13,21 @@ animation = &"run_right"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xhrik"]
 animation = &"run_left"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xn4qw"]
+animation = &"run_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4m6uu"]
+animation = &"run_up"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_61u5y"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_8xq21")
-blend_point_0/pos = Vector2(0, 0.9)
-blend_point_1/node = SubResource("AnimationNodeAnimation_84cqv")
-blend_point_1/pos = Vector2(0, -0.9)
-blend_point_2/node = SubResource("AnimationNodeAnimation_tr3ac")
-blend_point_2/pos = Vector2(1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_xhrik")
-blend_point_3/pos = Vector2(-1, 0)
+blend_point_0/node = SubResource("AnimationNodeAnimation_tr3ac")
+blend_point_0/pos = Vector2(1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_xhrik")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_xn4qw")
+blend_point_2/pos = Vector2(0, 0.9)
+blend_point_3/node = SubResource("AnimationNodeAnimation_4m6uu")
+blend_point_3/pos = Vector2(0, -0.9)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rojym"]
@@ -177,7 +177,7 @@ script = ExtResource("1_or8e5")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_2vx4o")
 anim_player = NodePath("../AnimationPlayer")
-parameters/run/blend_position = Vector2(0.054054, 0.170213)
+parameters/run/blend_position = Vector2(0.0103092, -0.876106)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -195,7 +195,7 @@ shape = SubResource("RectangleShape2D_58i6p")
 [node name="Drill" type="RayCast2D" parent="."]
 target_position = Vector2(0, 18)
 collision_mask = 2
-script = ExtResource("3_7u42c")
+script = ExtResource("3_msu6e")
 
 [node name="CoolDown" type="Timer" parent="Drill"]
 

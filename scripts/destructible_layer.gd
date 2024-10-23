@@ -40,12 +40,9 @@ func damage_tile(collision_pos: Vector2, damage: int) -> void:
 	print(atlas_coord)
 
 	if _gridData[map_pos].destructible:
-		var hit_points = _gridData[map_pos].hit_points
-		hit_points -= damage
-		if hit_points <= 0:
+		_gridData[map_pos].hit_points -= damage
+		if _gridData[map_pos].hit_points <= 0:
 			_destroy_tile(map_pos)
-		else:
-			_gridData[map_pos].hit_points = hit_points
 
 
 func _destroy_tile(pos: Vector2) -> void:
