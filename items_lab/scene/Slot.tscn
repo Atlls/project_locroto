@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn832h0q6jbeh"]
+
+[ext_resource type="Texture2D" uid="uid://bkasvodm7uj2v" path="res://icon.svg" id="1_pawqg"]
+
+[node name="Slot" type="Label"]
+anchors_preset = -1
+anchor_right = 0.594
+anchor_bottom = 0.5
+offset_right = -510.84
+offset_bottom = -320.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -3)
+scale = Vector2(4.35938, 2.35156)
+texture = ExtResource("1_pawqg")
+centered = false

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://meos6a2aadak"]
+
+[ext_resource type="Script" path="res://items_lab/script/inventory.gd" id="1_xqliu"]
+[ext_resource type="Resource" uid="uid://diqyituw3mi20" path="res://items_lab/res/inventory.tres" id="2_4cqyn"]
+[ext_resource type="PackedScene" uid="uid://dn832h0q6jbeh" path="res://items_lab/scene/Slot.tscn" id="3_kdqoi"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xqliu")
+inventory_res = ExtResource("2_4cqyn")
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Slot" parent="Container/GridContainer" instance=ExtResource("3_kdqoi")]
+layout_mode = 2
+
+[node name="Slot2" parent="Container/GridContainer" instance=ExtResource("3_kdqoi")]
+layout_mode = 2
