@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bvg3l7j4joopi"]
+
+[ext_resource type="Script" path="res://items_lab/script/item.gd" id="1_ssa2l"]
+[ext_resource type="Texture2D" uid="uid://bmujsr8tgim1l" path="res://items_lab/src/smegma.png" id="2_nigf4"]
+
+[resource]
+script = ExtResource("1_ssa2l")
+name = "smegma"
+texture = ExtResource("2_nigf4")

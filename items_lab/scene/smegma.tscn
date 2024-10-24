@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cc7l7aejb7nlm"]
+
+[ext_resource type="Texture2D" uid="uid://bmujsr8tgim1l" path="res://items_lab/src/smegma.png" id="1_cjkos"]
+[ext_resource type="Script" path="res://items_lab/script/smegma.gd" id="1_vhfgy"]
+[ext_resource type="Resource" uid="uid://bvg3l7j4joopi" path="res://items_lab/res/smegma.tres" id="2_surr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8suo"]
+size = Vector2(8, 6)
+
+[node name="smegma" type="Area2D"]
+script = ExtResource("1_vhfgy")
+item = ExtResource("2_surr2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cjkos")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_i8suo")
