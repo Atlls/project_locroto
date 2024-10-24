@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://bs8fwvwk8vhin"]
 
-[ext_resource type="TileSet" uid="uid://ggmec1x6xth" path="res://assets/tileset/solaria_tilemap.tres" id="2_8j656"]
+[ext_resource type="TileSet" uid="uid://ggmec1x6xth" path="res://assets/tileset/solaria_tileset.tres" id="2_8j656"]
 [ext_resource type="PackedScene" uid="uid://cn3h62o4vgiqj" path="res://scene/player.tscn" id="3_duvnl"]
 [ext_resource type="Script" path="res://scripts/destructible_layer.gd" id="3_nabk1"]
 
