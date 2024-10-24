@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dqynnynkkygor"]
 
-[ext_resource type="Script" path="res://terrain.gd" id="1_x2lyf"]
+[ext_resource type="Script" path="res://scripts/terrain.gd" id="1_x2lyf"]
 [ext_resource type="Texture2D" uid="uid://bk5hgcx6btpt0" path="res://assets/tileset/Solaria Demo Tiles.png" id="2_tisyk"]
 
 [sub_resource type="Gradient" id="Gradient_7gkkn"]
