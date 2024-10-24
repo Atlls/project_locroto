@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfjxwdqu3d20a"
-path="res://.godot/imported/char.png-5f2ede08656a1fefedecba0acabb0b66.ctex"
+uid="uid://bu21mr8ko4cfk"
+path="res://.godot/imported/vartolo1_ss.png-b47ea39485787d6fd1cee027279fee02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/char.png"
-dest_files=["res://.godot/imported/char.png-5f2ede08656a1fefedecba0acabb0b66.ctex"]
+source_file="res://assets/sprites/player/vartolo1_ss.png"
+dest_files=["res://.godot/imported/vartolo1_ss.png-b47ea39485787d6fd1cee027279fee02.ctex"]
 
 [params]
 

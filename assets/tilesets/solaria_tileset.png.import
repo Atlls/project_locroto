@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu21mr8ko4cfk"
-path="res://.godot/imported/vartolo1_ss.png-356db94eff5f82eebc5e74bba17ac416.ctex"
+uid="uid://bk5hgcx6btpt0"
+path="res://.godot/imported/solaria_tileset.png-e5decfae89da4bfb68ebf2d6b8419674.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/vartolo1_ss.png"
-dest_files=["res://.godot/imported/vartolo1_ss.png-356db94eff5f82eebc5e74bba17ac416.ctex"]
+source_file="res://assets/tilesets/solaria_tileset.png"
+dest_files=["res://.godot/imported/solaria_tileset.png-e5decfae89da4bfb68ebf2d6b8419674.ctex"]
 
 [params]
 
